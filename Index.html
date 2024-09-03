@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRDOCES</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script/script.js"></script>
+</head>
+<body>
+    
+    <!-- Página Inicial -->
+    <section id="home">
+        <img id="logo" src="img/CRDOCESLOGO.jpg" alt="Logo da CRDOCES">
+        <h1>Bem-vindo à pagina de pedidos da CRDOCES!</h1>
+        <p>Feito com muito amor.</p>
+        <button onclick="showOrderForm()">Faça seu Pedido</button>
+    </section>
+
+    <!-- Página de Pedidos -->
+    <section id="order" style="display: none;">
+        <h2>Faça seu Pedido</h2>
+
+        <!-- Escolha do Sabor -->
+        <label for="flavor">Escolha o sabor:</label>
+        <select id="flavor">
+            <!-- 70 KG -->
+            <option value="morango">Mouse de Morango</option>
+            <option value="maracuja">Mouse de Maracujá</option>
+            <option value="limao">Mouse de Limão</option>
+            <option value="chocolate">Mouse de Chocolate</option>
+            <option value="brigadeiro">Brigadeiro</option>
+            <option value="ninho">Brigadeiro de Ninho</option>
+            <option value="bichoDePe">Bicho de Pé</option>
+            <option value="laka">Brigadeiro Laka</option>
+            <option value="beijinho">Beijinho/Prestigio</option>
+            <option value="doceDeLeiteComCoco">Doce de Leite com coco</option>
+            <option value="doceDeLeiteSemCoco">Doce de Leite sem coco</option>
+            <!-- 75 KG -->
+            <option value="brigadeiroMorango">Brigadeiro com Morango</option>
+            <option value="cremeBelgaMorango">Creme Belga com Morango</option>
+            <option value="cremeBelgaAbacaxi">Creme Belga com Abacaxi</option>
+            <option value="cremeBelgaPessego">Creme Belga com Pêssego</option>
+            <option value="brigadeiroNinhoMorango">Brigadeiro de Ninho com Morango</option>
+            <option value="brigadeiroNinhoAbacaxi">Brigadeiro de Ninho com Abacaxi</option>
+            <option value="lakaMorango">Brigadeiro Laka com Morango</option>
+            <option value="trufadoMeioAmargo">Trufado Meio Amargo</option>
+            <option value="trufadoLeite">Trufado ao Leite</option>
+            <option value="doisAmores">Dois Amores (Brigadeiro Branco e Preto)</option>
+            <option value="cremeMoca">Creme Moça com Morango</option>
+            <!-- 80 KG -->
+            <option value="brigadeiroNinho">Brigadeiro de Ninho</option>
+            <option value="brigadeiroNutella">Brigadeiro de Nutella</option>
+            <option value="doceDeLeiteNozes">Doce de Leite com Nozes</option>
+            <option value="doceDeLeiteAmeixa">Doce de Leite com Ameixa</option>
+            <option value="florestaNegra">Floresta Negra</option>
+            <option value="florestaBranca">Floresta Branca</option>
+            <option value="brigadeiroNozes">Brigadeiro de Nozes</option>
+            <option value="trufadoBrancoLimao">Trufado Branco com Limão</option>
+            <option value="trufadoBrancoMaracuja">Trufado Branco com Maracujá</option>
+            <option value="trufadoChocolateCereja">Trufado Chocolate com Cereja</option>
+            <option value="trufadoChocolateMorango">Trufado Chocolate com Morango</option>
+        </select>
+
+        <!-- Escolha do Formato -->
+        <label for="shape">Escolha o formato:</label>
+        <select id="shape">
+            <option value="redondo">Redondo</option>
+            <option value="quadrado">Quadrado</option>
+        </select>
+
+        <!-- Quantidade de Quilos -->
+        <label for="weight">Quantidade de quilos:</label>
+        <input type="number" id="weight" min="1" max="50" value="1">
+
+        <!-- Decoração Personalizada -->
+        <label for="decoration">Decoração personalizada:</label>
+        <textarea id="decoration" rows="4"></textarea>
+
+        <!-- Visualização do Preço -->
+        <p id="price">Preço: R$ <span id="price-value">0</span></p>
+
+        <!-- Botão Finalizar Pedido -->
+        <button onclick="finalizeOrder()">Finalizar Pedido</button>
+    </section>
+
+    <!-- Página de Confirmação do Pedido -->
+    <section id="confirmation" style="display: none;">
+        <h2>Confirmação do Pedido</h2>
+        <div id="order-summary"></div>
+        <h3>Informações de Contato</h3>
+        <label for="name">Nome:</label>
+        <input type="text" id="name">
+        <label for="phone">Telefone:</label>
+        <input type="text" id="phone">
+        <label for="address">Endereço:</label>
+        <input type="text" id="address">
+        <button onclick="submitOrder()">Confirmar e Enviar Pedido</button>
+    </section>
+
+    <!-- Página de Agradecimento -->
+    <section id="thank-you" style="display: none;">
+        <h2>Obrigado pelo seu Pedido!</h2>
+        <p>Seu pedido foi recebido com sucesso. Em breve entraremos em contato.</p>
+    </section>
+
+</body>
+</html>
