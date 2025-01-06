@@ -1,6 +1,8 @@
 /* styles.css */
-:root{
-    --branco: rgb(255, 255, 255);
+:root {
+    --principal: #d4aeaa;
+    --branco: #ffffff;
+    --preto: #000000;
 }
 
 body {
@@ -8,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #6b6a6a;
+    background-color: var(--principal);
 }
 
 section {
@@ -48,6 +50,7 @@ input, select, textarea {
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 17px;
 }
 
 #price {
@@ -57,4 +60,13 @@ input, select, textarea {
 
 #thank-you p {
     font-size: 18px;
+}
+
+option {
+    text-align: center;
+}
+
+#confirma {
+    display: block;
+    margin: 10px auto;
 }

@@ -1,4 +1,45 @@
-// script.js
+// Objeto com os preços de cada sabor
+const flavorPrices = {
+    // 75
+    morango: 75,
+    maracuja: 75,
+    limao: 75,
+    chocolate: 75,
+    brigadeiro: 75,
+    ninho: 75,
+    bichoDePe: 75,
+    laka: 75,
+    beijinho: 75,
+    doceDeLeiteComCoco: 75,
+    doceDeLeiteSemCoco:75,
+    //80
+    brigadeiroComMorango: 80,
+    cremeBelgaComMorango: 80,
+    cremeBelgaComAbacaxi: 80,
+    cremeBelgaComPessego: 80,
+    brigadeiroDeNinhoComMorango: 80,
+    brigadeiroDeNinhoComAbacaxi: 80,
+    doceDeLeiteComMorango: 80,
+    doceDeLeiteComAbacaxi: 80,
+    brigadeiroLakaComMorango: 80,
+    trufadoAlpinoMeioAmargo : 80,
+    trufadoAlpinoAoLeite: 80,
+    doisAmores: 80,
+    CremeMocaComMorango: 80,
+    //85
+    brigadeiroDeNinhoComNutella: 85,
+    brigadeiroDeNutella: 85,
+    doceDeLeiteComNozes: 85,
+    doceDeLeiteComAmeixa: 85,
+    florestaNegra: 85,
+    florestaBranca: 85,
+    brigadeiroDeNozes: 85,
+    trufadoBrancoLimao: 85,
+    trufadoBrancoMaracuja: 85,
+    trufadoChocolateComCereja: 85,
+    trufadoChocolateComMorango: 85,
+
+};
 
 // Exibir o formulário de pedidos
 function showOrderForm() {
@@ -9,24 +50,16 @@ function showOrderForm() {
 // Calcular e exibir o preço
 function calculatePrice() {
     const flavor = document.getElementById('flavor').value;
-    const shape = document.getElementById('shape').value;
-    const weight = document.getElementById('weight').value;
+    const weight = parseFloat(document.getElementById('weight').value);
 
-    // Preço base por quilo
-    let pricePerKg = 50;
+    // Preço base do sabor
+    const pricePerKg = flavorPrices[flavor] || 50;
 
-    // Aumentar preço se for sabor de morango
-    if (flavor === 'morango') {
-        pricePerKg += 10;
-    }
+    // Calcular preço total
+    const totalPrice = (pricePerKg) * weight;
 
-    // Aumentar preço se o formato for quadrado
-    if (shape === 'quadrado') {
-        pricePerKg += 20;
-    }
-
-    const totalPrice = pricePerKg * weight;
-    document.getElementById('price-value').innerText = totalPrice;
+    // Atualizar o preço exibido
+    document.getElementById('price-value').innerText = totalPrice.toFixed(2);
 }
 
 // Finalizar pedido e exibir página de confirmação
@@ -52,12 +85,6 @@ function finalizeOrder() {
 
 // Enviar pedido
 function submitOrder() {
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-
-    // Aqui você pode adicionar lógica para enviar os dados para o servidor
-
     document.getElementById('confirmation').style.display = 'none';
     document.getElementById('thank-you').style.display = 'block';
 }
